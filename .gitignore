@@ -1,0 +1,13 @@
+# Ignore Visual Studio/JetBrains Rider folders
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+**/bin/
+**/obj/
+

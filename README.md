@@ -14,8 +14,9 @@ RabbitMQ-Demo/
 
 └── README.md # You're here!
 
-This setup demonstrates a **one-to-one** messaging pattern using `RabbitMQ.Client` with support for:
 
+
+This setup demonstrates a **one-to-one** messaging pattern using `RabbitMQ.Client` with support for:
 - Persistent messages
 - Manual acknowledgments
 - Asynchronous message consumption
@@ -31,7 +32,6 @@ docker run -d --hostname rmq --name rabbit-server \
 -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
 ```
-
 🔗 RabbitMQ Access
 Web UI: http://localhost:15672
 
@@ -39,10 +39,10 @@ Username: guest
 
 Password: guest
 
+
 ⚙️ 2. Setup Producer & Consumer Apps
 
 🧱 Create Projects
-
 ```bash
 # Producer
 dotnet new console -n Producer
@@ -55,8 +55,7 @@ cd Consumer
 dotnet add package RabbitMQ.Client --version 7.1.2
 
 ```
-
-🚀 3. How It Works
+##  🚀 3. How It Works
 
 🔁 Message Flow Diagram
 
@@ -80,8 +79,7 @@ dotnet add package RabbitMQ.Client --version 7.1.2
                    │     Consumer     │
                    └──────────────────┘
 ```
-
-🧠 Flow Description
+##  🧠 Flow Description
 
 Producer sends a message with a specific routing key
 
@@ -89,11 +87,11 @@ Exchange (direct type) routes the message to a queue bound with that key
 
 Queue stores the message until the Consumer reads and acknowledges it
 
-📂 Code Overview
+##  📂 Code Overview
 
 You’ll find complete code inside the Producer/ and Consumer/ folders.
 
-✅ Producer Highlights
+##  ✅ Producer Highlights
 
 Connects to RabbitMQ
 
@@ -103,7 +101,7 @@ Publishes 10 messages (1 every 5 seconds)
 
 Uses a routing key and persistent messages
 
-✅ Consumer Highlights
+##  ✅ Consumer Highlights
 
 Connects to RabbitMQ
 
@@ -113,20 +111,20 @@ Listens for messages using AsyncEventingBasicConsumer
 
 Uses manual ack to confirm processing
 
-Producer Output:
+##  Producer Output:
 
 ```
 Sent: Message 1: Hello, RabbitMQ!
 
 ```
 
-Consumer Output:
+##  Consumer Output:
 
 ```
 Received: Message 1: Hello, RabbitMQ!
 
 ```
 
-Made with ❤️ using RabbitMQ and .NET
+##  Made with ❤️ using RabbitMQ and .NET
 
-Feel free to fork, contribute, or reach out with suggestions!
+## Feel free to fork, contribute, or reach out with suggestions!
